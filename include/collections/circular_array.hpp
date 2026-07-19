@@ -1,4 +1,8 @@
-#ifndef CXX_CIRCULAR_ARRAY_HPP
-#define CXX_CIRCULAR_ARRAY_HPP
+#ifndef COLLECTIONS_CIRCULAR_ARRAY_HPP
+#define COLLECTIONS_CIRCULAR_ARRAY_HPP
 
-#endif // #ifndef CXX_CIRCULAR_ARRAY_HPP
+namespace collections {
+
+} // namespace collections
+
+#endif // #ifndef COLLECTIONS_CIRCULAR_ARRAY_HPP
