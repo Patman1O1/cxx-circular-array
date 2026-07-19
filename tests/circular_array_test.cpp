@@ -3,8 +3,8 @@
 #include <gmock/gmock.h>
 
 // Local Includes
-#include <cxx_circular_array/cxx_circular_array.hpp>
+#include <collections/circular_array.hpp>
 
-namespace cxx_circular_array_testing {
+namespace collections::circular_array_testing {
 
-} // namespace cxx_circular_array_testing
+} // namespace collections::circular_array_testing
