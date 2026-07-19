@@ -2,9 +2,9 @@
 # Information
 #-----------------------------------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 4.3.0)
-project("cxx_circular_array"
+project("circular_array"
         VERSION 0.1.0
-        DESCRIPTION ""
+	DESCRIPTION ""
         LANGUAGES CXX
 )
 
@@ -25,6 +25,7 @@ if(PROJECT_IS_TOP_LEVEL)
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_VISIBILITY_PRESET hidden)
     set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+    set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
     # Project Settings
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -60,44 +61,44 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cxx_circular_array_headers
-# Alias: cxx_circular_array::cxx_circular_array_headers
+# Target: circular_array_headers
+# Alias: collections::circular_array_headers
 # Type: Interface Library
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cxx_circular_array_headers INTERFACE)
+add_library(circular_array_headers INTERFACE)
 
 # Target alias
-add_library(cxx_circular_array::cxx_circular_array_headers ALIAS cxx_circular_array_headers)
+add_library(collections::circular_array_headers ALIAS circular_array_headers)
 
 # Target headers
-target_include_directories(cxx_circular_array_headers
+target_include_directories(circular_array_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cxx_circular_array
-# Alias: cxx_circular_array::cxx_circular_array
+# Target: circular_array
+# Alias: collections::circular_array
 # Type: Interface Library
-# Dependencies: cxx_circular_array::cxx_circular_array_headers
+# Dependencies: collections::circular_array_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cxx_circular_array INTERFACE)
+add_library(circular_array INTERFACE)
 
 # Target alias
-add_library(cxx_circular_array::cxx_circular_array ALIAS cxx_circular_array)
+add_library(collections::circular_array ALIAS circular_array)
 
 # Target dependencies
-target_link_libraries(cxx_circular_array
+target_link_libraries(circular_array
     INTERFACE
-        cxx_circular_array::cxx_circular_array_headers
+        collections::circular_array_headers
 )
 
 # Target properties
-set_target_properties(cxx_circular_array PROPERTIES
-        OUTPUT_NAME cxx_circular_array
+set_target_properties(circular_array PROPERTIES
+        OUTPUT_NAME circular-array
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         CXX_VISIBILITY_PRESET hidden
@@ -105,12 +106,12 @@ set_target_properties(cxx_circular_array PROPERTIES
 )
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
-    # Install cxx_circular_array
-    install(TARGETS cxx_circular_array
-            RUNTIME COMPONENT cxx_circular_array
-            LIBRARY COMPONENT cxx_circular_array
-            NAMELINK_COMPONENT cxx_circular_array
-            ARCHIVE COMPONENT cxx_circular_array
+    # Install circular_array
+    install(TARGETS circular_array
+            RUNTIME COMPONENT circular_array
+            LIBRARY COMPONENT circular_array
+            NAMELINK_COMPONENT circular_array
+            ARCHIVE COMPONENT circular_array
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
