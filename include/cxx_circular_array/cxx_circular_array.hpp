@@ -1,0 +1,4 @@
+#ifndef CXX_CIRCULAR_ARRAY_HPP
+#define CXX_CIRCULAR_ARRAY_HPP
+
+#endif // #ifndef CXX_CIRCULAR_ARRAY_HPP
